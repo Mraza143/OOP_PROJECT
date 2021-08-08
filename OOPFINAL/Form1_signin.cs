@@ -212,7 +212,14 @@ namespace MOVIEFLIX_OOP
                 m_textBox_password.Text = "";
            
         }
-// ############################################################################################################################################################# 
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            label1.BackColor = Color.White;
+            label1.ForeColor = Color.White;
+        }
+
+        // ############################################################################################################################################################# 
         private void m_textBox_email_Click(object sender, EventArgs e)
         {
           
