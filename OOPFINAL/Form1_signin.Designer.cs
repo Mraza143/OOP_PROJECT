@@ -33,7 +33,6 @@
             this.m_textBox_password = new System.Windows.Forms.TextBox();
             this.m_button_login = new System.Windows.Forms.Button();
             this.m_label_register = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // m_textBox_email
@@ -78,22 +77,11 @@
             this.m_label_register.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.m_label_register.Click += new System.EventHandler(this.m_label_register_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(102, 239);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Test Label";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
             // Form1_signin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.m_label_register);
             this.Controls.Add(this.m_button_login);
             this.Controls.Add(this.m_textBox_password);
@@ -113,7 +101,6 @@
         private System.Windows.Forms.TextBox m_textBox_password;
         private System.Windows.Forms.Button m_button_login;
         private System.Windows.Forms.Label m_label_register;
-        private System.Windows.Forms.Label label1;
     }
 }
 

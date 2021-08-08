@@ -213,12 +213,6 @@ namespace MOVIEFLIX_OOP
            
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-            label1.BackColor = Color.White;
-            label1.ForeColor = Color.White;
-        }
-
         // ############################################################################################################################################################# 
         private void m_textBox_email_Click(object sender, EventArgs e)
         {
@@ -229,4 +223,3 @@ namespace MOVIEFLIX_OOP
 // #############################################################################################################################################################
     }
 }
-// This is a test comment
