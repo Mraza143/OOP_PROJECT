@@ -123,12 +123,12 @@ namespace MOVIEFLIX_OOP
                     picturebox[i] = new PictureBox();
                     this.Controls.Add(picturebox[i]);
 
-                    if (i % 6 == 0) { x = 0; y = y + 110; }
+                    if (i % 4 == 0) { x = 0; y = y + 190; }
 
                     //picturebox[i].BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-                    picturebox[i].Location = new Point(x * 75 + 10, y);
+                    picturebox[i].Location = new Point(x * 140 + 10, y);
 
-                    picturebox[i].Size = new Size(75, 100);
+                    picturebox[i].Size = new Size(140, 190);
                     
 
                     picturebox[i].SizeMode = PictureBoxSizeMode.Zoom;
