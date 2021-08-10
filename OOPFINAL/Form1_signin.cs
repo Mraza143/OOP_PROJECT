@@ -19,14 +19,12 @@ namespace MOVIEFLIX_OOP
     {
 
         // global_variables
-        //
+        
         SQLiteConnection m_dbConnection_signin; // The main DB Connection
         SQLiteCommand sql_query_signin;         // a general purpose query, can be overloaded as req.
         String username, password;              // for textbox data
         String response;                        // a generalized response string for MessageBoxes, reused as req.
-        //
-        // /global_variables
-
+        
 
 
 // #############################################################################################################################################################
@@ -73,12 +71,10 @@ namespace MOVIEFLIX_OOP
 
 
             // connection string and open
-            //
             using (SQLiteConnection con = new SQLiteConnection("Data Source=imdbclone.sqlite;Version=3;"))//connection string
             {
 
                 con.Open();
-                //
                 // /connection string and open
 
 
@@ -98,9 +94,8 @@ namespace MOVIEFLIX_OOP
                         sql_create_table.ExecuteNonQuery();
                     }
                 }
-                
-                // 
-                //
+           
+
                 //end existence check/creation for users table
 
                 // ************************COOKIE SIMULATOR!*********************************
