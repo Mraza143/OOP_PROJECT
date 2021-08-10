@@ -66,7 +66,7 @@ namespace MOVIEFLIX_OOP
             director.Value                  = m_textBox_director.Text;
             actor_main.Value                = m_textBox_actorMain.Text;
             actor_secondary.Value           = m_textBox_actorSecondary.Text;
-            genre_main.Value = textBox1.Text;
+            genre_main.Value = m_textBox_genre.Text;
             genre_secondary.Value = textBox2.Text;
             summary.Value                   = m_richTextBox_summary.Text;
 
@@ -129,17 +129,6 @@ namespace MOVIEFLIX_OOP
             this.Close();
             f3.ShowDialog();
         }
-
-        private void Form4_addMovie_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
         //######################################################################################################################################################################
-
     }
 }
