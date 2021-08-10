@@ -75,6 +75,7 @@
             // m_button_register
             // 
             this.m_button_register.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.m_button_register.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.m_button_register.Location = new System.Drawing.Point(161, 336);
             this.m_button_register.Name = "m_button_register";
             this.m_button_register.Padding = new System.Windows.Forms.Padding(3);
@@ -151,6 +152,7 @@
             this.Controls.Add(this.m_textbox_verification);
             this.Controls.Add(this.m_textbox_password);
             this.Controls.Add(this.m_textbox_email);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2_registration";
             this.Text = "Registration";
             this.Load += new System.EventHandler(this.Form2_registration_Load);

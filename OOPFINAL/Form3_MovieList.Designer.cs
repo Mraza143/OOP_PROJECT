@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3_MovieList));
             this.m_richTextBox_details = new System.Windows.Forms.RichTextBox();
             this.m_picturebox_poster = new System.Windows.Forms.PictureBox();
             this.m_button_newMovie = new System.Windows.Forms.Button();
@@ -173,8 +174,9 @@
             this.Controls.Add(this.m_button_newMovie);
             this.Controls.Add(this.m_picturebox_poster);
             this.Controls.Add(this.m_richTextBox_details);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form3_MovieList";
-            this.Text = "Form3_MovieList";
+            this.Text = "Movies List";
             this.Load += new System.EventHandler(this.Form3_MovieList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.m_picturebox_poster)).EndInit();
             this.groupBox1.ResumeLayout(false);
