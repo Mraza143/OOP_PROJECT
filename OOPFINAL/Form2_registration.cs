@@ -23,8 +23,6 @@ namespace MOVIEFLIX_OOP
         public Form2_registration()
         {
             InitializeComponent();
-          
-
         }
 
 
@@ -62,7 +60,9 @@ namespace MOVIEFLIX_OOP
 
         private void Form2_registration_Load(object sender, EventArgs e)
         {
-
+            
         }
+
+     
     }
 }

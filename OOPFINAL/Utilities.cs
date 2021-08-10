@@ -17,7 +17,6 @@ namespace MOVIEFLIX_OOP
         public static string md5_generator(string plaintext)
         {
             Encoder enc = System.Text.Encoding.Unicode.GetEncoder();
-
             byte[] convertedText = new byte[plaintext.Length * 2];
             enc.GetBytes(plaintext.ToCharArray(), 0, plaintext.Length, convertedText, 0, true);
 
