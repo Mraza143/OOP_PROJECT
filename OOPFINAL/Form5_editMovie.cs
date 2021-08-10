@@ -126,7 +126,7 @@ namespace MOVIEFLIX_OOP
                     genre_main.Value        =   m_comboBox_genre1.SelectedItem;
                     genre_secondary.Value  =   m_comboBox_genre2.SelectedItem;
 
-                    if(m_textBox_filepath.Text.Equals("")==false && photoIsEmpty==true) //changed for readability 11 jun 15
+                    if(m_textBox_filepath.Text.Equals("")==false && photoIsEmpty==false) //changed for readability 11 jun 15
                     {
                         // just have a string for the sqlitecommand instead v
                         commandtext = "update movies set name=@name,director=@director,actor_main=@actor_main,actor_secondary=@actor_secondary,genre_main=@genre_main,genre_secondary=@genre_secondary,summary=@summary,poster=@poster where id=" + i;
@@ -186,7 +186,7 @@ namespace MOVIEFLIX_OOP
         {
             OpenFileDialog dlg = new OpenFileDialog();
             dlg.Title = "Choose Image";
-            dlg.Filter = "Image Files (*.jpg;*.bmp;*.png;*.jpeg)|*.jpg;*.bmp;*.png;*.jpeg";
+            dlg.Filter = "Image Files (*.jfif;*.jpg;*.bmp;*.png;*.jpeg)|*.jfif;*.jpg;*.bmp;*.png;*.jpeg";
 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
