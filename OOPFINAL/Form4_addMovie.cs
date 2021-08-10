@@ -36,7 +36,7 @@ namespace MOVIEFLIX_OOP
         {
             OpenFileDialog dlg = new OpenFileDialog();
             dlg.Title = "Choose Image";
-            dlg.Filter = "Image Files (*.jpg;*.bmp;*.png;*.jpeg)|*.jpg;*.bmp;*.png;*.jpeg";
+            dlg.Filter = "Image Files (*.jfif;*.jpg;*.bmp;*.png;*.jpeg)|*.jfif;*.jpg;*.bmp;*.png;*.jpeg";
 
             if(dlg.ShowDialog() == DialogResult.OK)
             {
@@ -67,7 +67,7 @@ namespace MOVIEFLIX_OOP
             actor_main.Value                = m_textBox_actorMain.Text;
             actor_secondary.Value           = m_textBox_actorSecondary.Text;
             genre_main.Value = textBox1.Text;
-            genre_secondary.Value = textBox1.Text;
+            genre_secondary.Value = textBox2.Text;
             summary.Value                   = m_richTextBox_summary.Text;
 
             if (!m_textBox_filepath.Text.Equals(""))
