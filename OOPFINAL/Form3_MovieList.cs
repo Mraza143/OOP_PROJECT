@@ -61,6 +61,7 @@ namespace MOVIEFLIX_OOP
 
             m_label_username.Text = welcome;
             this.AutoScroll = true;
+            
 
             
 
@@ -113,15 +114,17 @@ namespace MOVIEFLIX_OOP
                 }
 
                 reader.Dispose();
-
-                PictureBox[] picturebox = new PictureBox[m_numberOfPictures];                   //create the array of PictureBox type
-                int x = 0; int y = 60;                                                           // the coordinates
+                
+                PictureBox[] picturebox = new PictureBox[m_numberOfPictures];
+                
+            
+                int x = 0; int y = 60;            // the coordinates
 
                 for (i = 0; i < m_numberOfPictures; i++)
                 {
                     x++;
-                    picturebox[i] = new PictureBox();
-                    this.Controls.Add(picturebox[i]);
+                picturebox[i] = new PictureBox();
+                this.Controls.Add(picturebox[i]);
 
                     if (i % 4 == 0) { x = 0; y = y + 190; }
 
@@ -132,8 +135,9 @@ namespace MOVIEFLIX_OOP
                     
 
                     picturebox[i].SizeMode = PictureBoxSizeMode.Zoom;
+                   
 
-                    sql_query = new SQLiteCommand("select id,poster,rowid from tmp where rowid=" + (i + 1), m_dbConnection);
+                     sql_query = new SQLiteCommand("select id,poster,rowid from tmp where rowid=" + (i + 1), m_dbConnection);
                     //sql_query = new SQLiteCommand("select poster from tmp where rowid=" + (i+1), m_dbConnection);
                     reader = sql_query.ExecuteReader();
                     // **************try-catch block****************************
@@ -247,7 +251,18 @@ namespace MOVIEFLIX_OOP
             this.Close();
 
         }
-//###########################################################################################################################################################################
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form6_favourites f6 = new Form6_favourites();
+            f6.ShowDialog();
+            
+            
+            
+        }
+
+        //###########################################################################################################################################################################
         private void m_button_search_Click(object sender, EventArgs e)
         {
             

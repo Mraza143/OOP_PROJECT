@@ -77,6 +77,12 @@
     <Compile Include="Form5_editMovie.Designer.cs">
       <DependentUpon>Form5_editMovie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form6_favourites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form6_favourites.Designer.cs">
+      <DependentUpon>Form6_favourites.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilities.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -94,6 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form5_editMovie.resx">
       <DependentUpon>Form5_editMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form6_favourites.resx">
+      <DependentUpon>Form6_favourites.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
