@@ -65,17 +65,17 @@
     <Compile Include="Form3_MovieList.Designer.cs">
       <DependentUpon>Form3_MovieList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form4_addMovie.cs">
+    <Compile Include="Form5_addMovie.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form4_addMovie.Designer.cs">
-      <DependentUpon>Form4_addMovie.cs</DependentUpon>
+    <Compile Include="Form5_addMovie.Designer.cs">
+      <DependentUpon>Form5_addMovie.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form5_editMovie.cs">
+    <Compile Include="Form4_editMovie.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form5_editMovie.Designer.cs">
-      <DependentUpon>Form5_editMovie.cs</DependentUpon>
+    <Compile Include="Form4_editMovie.Designer.cs">
+      <DependentUpon>Form4_editMovie.cs</DependentUpon>
     </Compile>
     <Compile Include="Form6_favourites.cs">
       <SubType>Form</SubType>
@@ -95,11 +95,11 @@
     <EmbeddedResource Include="Form3_MovieList.resx">
       <DependentUpon>Form3_MovieList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form4_addMovie.resx">
-      <DependentUpon>Form4_addMovie.cs</DependentUpon>
+    <EmbeddedResource Include="Form5_addMovie.resx">
+      <DependentUpon>Form5_addMovie.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form5_editMovie.resx">
-      <DependentUpon>Form5_editMovie.cs</DependentUpon>
+    <EmbeddedResource Include="Form4_editMovie.resx">
+      <DependentUpon>Form4_editMovie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form6_favourites.resx">
       <DependentUpon>Form6_favourites.cs</DependentUpon>

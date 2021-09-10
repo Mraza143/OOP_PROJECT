@@ -52,7 +52,7 @@ namespace MOVIEFLIX_OOP
             }
             // /Fill up the genre dropdown box 
 
-                using (m_dbConnection = new SQLiteConnection("Data Source=imdbclone.sqlite"))
+                using (m_dbConnection = new SQLiteConnection("Data Source=movieflix.sqlite"))
                 {
                     m_dbConnection.Open();
 
@@ -103,7 +103,7 @@ namespace MOVIEFLIX_OOP
 
             
 
-            using(m_dbConnection = new SQLiteConnection("Data Source=imdbclone.sqlite"))
+            using(m_dbConnection = new SQLiteConnection("Data Source=movieflix.sqlite"))
             {
                 m_dbConnection.Open();
 

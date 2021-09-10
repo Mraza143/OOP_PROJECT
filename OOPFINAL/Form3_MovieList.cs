@@ -17,8 +17,9 @@ namespace MOVIEFLIX_OOP
 //###########################################################################################################################################################################
         //GLOVARS
         //
-        SQLiteConnection m_dbConnection = new SQLiteConnection("Data Source=IMDBClone.sqlite;Version=3;");
+        SQLiteConnection m_dbConnection = new SQLiteConnection("Data Source=movieflix.sqlite;Version=3;");
         SQLiteCommand sql_query;
+
         SQLiteDataReader reader;
         int i; //need this for identifying clicked poster..
         int movieID; //needed for editing clicked poster/movie...ugh. .
@@ -171,7 +172,10 @@ namespace MOVIEFLIX_OOP
 //###########################################################################################################################################################################
         void handleClick(object sender, EventArgs e)
         {
-            m_dbConnection.Open();
+            if (m_dbConnection.State != ConnectionState.Open)
+            {
+                m_dbConnection.Open();
+            }
             PictureBox picbox = sender as PictureBox;
             i = Convert.ToInt32(picbox.Name);
             //DEBUG : MessageBox.Show("clicked : " + picbox.Name);
@@ -231,7 +235,7 @@ namespace MOVIEFLIX_OOP
         private void m_button_logout_Click(object sender, EventArgs e)
         {
             //m_dbConnection.Open();
-            using (SQLiteConnection con = new SQLiteConnection("Data Source=imdbclone.sqlite;Version=3;"))
+            using (SQLiteConnection con = new SQLiteConnection("Data Source=movieflix.sqlite;Version=3;"))
             {
 
 
@@ -254,12 +258,24 @@ namespace MOVIEFLIX_OOP
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (m_dbConnection.State != ConnectionState.Open)
+            {                
+                m_dbConnection.Open();
+            }
+            sql_query = new SQLiteCommand("update movies set isFavourite=1 where id=" +movieID, m_dbConnection);
+            sql_query.ExecuteNonQuery();
+            
+            
+            
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
             this.Hide();
             Form6_favourites f6 = new Form6_favourites();
             f6.ShowDialog();
-            
-            
-            
+
         }
 
         //###########################################################################################################################################################################

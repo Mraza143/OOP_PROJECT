@@ -61,9 +61,9 @@ namespace MOVIEFLIX_OOP
 
             // Existence check for database...
             //
-            if(!File.Exists("imdbclone.sqlite"))
+            if(!File.Exists("movieflix.sqlite"))
             {
-                SQLiteConnection.CreateFile("imdbclone.sqlite");
+                SQLiteConnection.CreateFile("movieflix.sqlite");
             }
             // ...and creation if not present
             
@@ -71,7 +71,7 @@ namespace MOVIEFLIX_OOP
 
 
             // connection string and open
-            using (SQLiteConnection con = new SQLiteConnection("Data Source=imdbclone.sqlite;Version=3;"))//connection string
+            using (SQLiteConnection con = new SQLiteConnection("Data Source=movieflix.sqlite;Version=3;"))//connection string
             {
 
                 con.Open();
@@ -161,7 +161,7 @@ namespace MOVIEFLIX_OOP
 
             
 
-            using (SQLiteConnection con = new SQLiteConnection("Data Source=imdbclone.sqlite"))
+            using (SQLiteConnection con = new SQLiteConnection("Data Source=movieflix.sqlite"))
             {
 
                 con.Open();

@@ -17,7 +17,7 @@ namespace MOVIEFLIX_OOP
     {
         //  GloVars
         //
-        SQLiteConnection m_dbConnection = new SQLiteConnection("Data Source=IMDBClone.sqlite;Version=3;");
+        SQLiteConnection m_dbConnection = new SQLiteConnection("Data Source=movieflix.sqlite;Version=3;");
         SQLiteCommand sql_query;
         SQLiteDataReader reader;
         string username;
