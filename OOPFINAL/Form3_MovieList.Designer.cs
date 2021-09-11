@@ -55,6 +55,7 @@
             this.m_richTextBox_details.Location = new System.Drawing.Point(1085, 419);
             this.m_richTextBox_details.Margin = new System.Windows.Forms.Padding(4);
             this.m_richTextBox_details.Name = "m_richTextBox_details";
+            this.m_richTextBox_details.ReadOnly = true;
             this.m_richTextBox_details.Size = new System.Drawing.Size(305, 223);
             this.m_richTextBox_details.TabIndex = 0;
             this.m_richTextBox_details.Text = "";
