@@ -51,29 +51,27 @@
             // 
             // m_richTextBox_details
             // 
-            this.m_richTextBox_details.Location = new System.Drawing.Point(1085, 419);
-            this.m_richTextBox_details.Margin = new System.Windows.Forms.Padding(4);
+            this.m_richTextBox_details.Location = new System.Drawing.Point(814, 340);
             this.m_richTextBox_details.Name = "m_richTextBox_details";
-            this.m_richTextBox_details.Size = new System.Drawing.Size(305, 223);
+            this.m_richTextBox_details.ReadOnly = true;
+            this.m_richTextBox_details.Size = new System.Drawing.Size(230, 182);
             this.m_richTextBox_details.TabIndex = 0;
             this.m_richTextBox_details.Text = "";
             // 
             // m_picturebox_poster
             // 
-            this.m_picturebox_poster.Location = new System.Drawing.Point(1085, 70);
-            this.m_picturebox_poster.Margin = new System.Windows.Forms.Padding(4);
+            this.m_picturebox_poster.Location = new System.Drawing.Point(814, 57);
             this.m_picturebox_poster.Name = "m_picturebox_poster";
-            this.m_picturebox_poster.Size = new System.Drawing.Size(307, 342);
+            this.m_picturebox_poster.Size = new System.Drawing.Size(230, 278);
             this.m_picturebox_poster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.m_picturebox_poster.TabIndex = 1;
             this.m_picturebox_poster.TabStop = false;
             // 
             // m_button_newMovie
             // 
-            this.m_button_newMovie.Location = new System.Drawing.Point(1085, 746);
-            this.m_button_newMovie.Margin = new System.Windows.Forms.Padding(4);
+            this.m_button_newMovie.Location = new System.Drawing.Point(814, 606);
             this.m_button_newMovie.Name = "m_button_newMovie";
-            this.m_button_newMovie.Size = new System.Drawing.Size(451, 31);
+            this.m_button_newMovie.Size = new System.Drawing.Size(338, 25);
             this.m_button_newMovie.TabIndex = 2;
             this.m_button_newMovie.Text = "Add a Movie...";
             this.m_button_newMovie.UseVisualStyleBackColor = true;
@@ -81,10 +79,9 @@
             // 
             // m_button_editMovie
             // 
-            this.m_button_editMovie.Location = new System.Drawing.Point(1085, 651);
-            this.m_button_editMovie.Margin = new System.Windows.Forms.Padding(4);
+            this.m_button_editMovie.Location = new System.Drawing.Point(814, 529);
             this.m_button_editMovie.Name = "m_button_editMovie";
-            this.m_button_editMovie.Size = new System.Drawing.Size(307, 26);
+            this.m_button_editMovie.Size = new System.Drawing.Size(230, 21);
             this.m_button_editMovie.TabIndex = 3;
             this.m_button_editMovie.Text = "Edit Details";
             this.m_button_editMovie.UseVisualStyleBackColor = false;
@@ -92,10 +89,9 @@
             // 
             // m_button_logout
             // 
-            this.m_button_logout.Location = new System.Drawing.Point(1190, 35);
-            this.m_button_logout.Margin = new System.Windows.Forms.Padding(4);
+            this.m_button_logout.Location = new System.Drawing.Point(892, 28);
             this.m_button_logout.Name = "m_button_logout";
-            this.m_button_logout.Size = new System.Drawing.Size(99, 27);
+            this.m_button_logout.Size = new System.Drawing.Size(74, 22);
             this.m_button_logout.TabIndex = 4;
             this.m_button_logout.Text = "Log Out";
             this.m_button_logout.UseVisualStyleBackColor = true;
@@ -104,29 +100,26 @@
             // m_label_username
             // 
             this.m_label_username.AutoSize = true;
-            this.m_label_username.Location = new System.Drawing.Point(1186, 12);
-            this.m_label_username.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.m_label_username.Location = new System.Drawing.Point(890, 10);
             this.m_label_username.Name = "m_label_username";
             this.m_label_username.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.m_label_username.Size = new System.Drawing.Size(46, 17);
+            this.m_label_username.Size = new System.Drawing.Size(35, 13);
             this.m_label_username.TabIndex = 5;
             this.m_label_username.Text = "label1";
             this.m_label_username.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // m_textbox_search
             // 
-            this.m_textbox_search.Location = new System.Drawing.Point(17, 117);
-            this.m_textbox_search.Margin = new System.Windows.Forms.Padding(4);
+            this.m_textbox_search.Location = new System.Drawing.Point(13, 95);
             this.m_textbox_search.Name = "m_textbox_search";
-            this.m_textbox_search.Size = new System.Drawing.Size(132, 22);
+            this.m_textbox_search.Size = new System.Drawing.Size(100, 20);
             this.m_textbox_search.TabIndex = 6;
             // 
             // m_button_search
             // 
-            this.m_button_search.Location = new System.Drawing.Point(158, 117);
-            this.m_button_search.Margin = new System.Windows.Forms.Padding(4);
+            this.m_button_search.Location = new System.Drawing.Point(118, 95);
             this.m_button_search.Name = "m_button_search";
-            this.m_button_search.Size = new System.Drawing.Size(161, 25);
+            this.m_button_search.Size = new System.Drawing.Size(121, 20);
             this.m_button_search.TabIndex = 7;
             this.m_button_search.Text = "Find...";
             this.m_button_search.UseVisualStyleBackColor = true;
@@ -134,10 +127,9 @@
             // 
             // m_button_findByGenre
             // 
-            this.m_button_findByGenre.Location = new System.Drawing.Point(148, 30);
-            this.m_button_findByGenre.Margin = new System.Windows.Forms.Padding(4);
+            this.m_button_findByGenre.Location = new System.Drawing.Point(111, 24);
             this.m_button_findByGenre.Name = "m_button_findByGenre";
-            this.m_button_findByGenre.Size = new System.Drawing.Size(133, 58);
+            this.m_button_findByGenre.Size = new System.Drawing.Size(100, 47);
             this.m_button_findByGenre.TabIndex = 9;
             this.m_button_findByGenre.Text = "Search";
             this.m_button_findByGenre.UseVisualStyleBackColor = true;
@@ -147,20 +139,18 @@
             // 
             this.m_comboBox_genre2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_comboBox_genre2.FormattingEnabled = true;
-            this.m_comboBox_genre2.Location = new System.Drawing.Point(8, 55);
-            this.m_comboBox_genre2.Margin = new System.Windows.Forms.Padding(4);
+            this.m_comboBox_genre2.Location = new System.Drawing.Point(6, 45);
             this.m_comboBox_genre2.Name = "m_comboBox_genre2";
-            this.m_comboBox_genre2.Size = new System.Drawing.Size(132, 24);
+            this.m_comboBox_genre2.Size = new System.Drawing.Size(100, 21);
             this.m_comboBox_genre2.TabIndex = 10;
             // 
             // m_comboBox_genre1
             // 
             this.m_comboBox_genre1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_comboBox_genre1.FormattingEnabled = true;
-            this.m_comboBox_genre1.Location = new System.Drawing.Point(8, 23);
-            this.m_comboBox_genre1.Margin = new System.Windows.Forms.Padding(4);
+            this.m_comboBox_genre1.Location = new System.Drawing.Point(6, 19);
             this.m_comboBox_genre1.Name = "m_comboBox_genre1";
-            this.m_comboBox_genre1.Size = new System.Drawing.Size(132, 24);
+            this.m_comboBox_genre1.Size = new System.Drawing.Size(100, 21);
             this.m_comboBox_genre1.TabIndex = 11;
             // 
             // groupBox1
@@ -168,11 +158,9 @@
             this.groupBox1.Controls.Add(this.m_comboBox_genre1);
             this.groupBox1.Controls.Add(this.m_comboBox_genre2);
             this.groupBox1.Controls.Add(this.m_button_findByGenre);
-            this.groupBox1.Location = new System.Drawing.Point(17, 149);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(13, 121);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(303, 96);
+            this.groupBox1.Size = new System.Drawing.Size(227, 78);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Find Movie By Genre";
@@ -181,19 +169,19 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::OOPFINAL.Properties.Resources.axcvb_Untitled;
-            this.pictureBox1.Location = new System.Drawing.Point(511, 30);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(383, 24);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(249, 70);
+            this.pictureBox1.Size = new System.Drawing.Size(187, 57);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1082, 705);
+            this.button1.Location = new System.Drawing.Point(812, 573);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 34);
+            this.button1.Size = new System.Drawing.Size(112, 28);
             this.button1.TabIndex = 14;
             this.button1.Text = "Add to favourites";
             this.button1.UseVisualStyleBackColor = true;
@@ -201,9 +189,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1238, 705);
+            this.button2.Location = new System.Drawing.Point(928, 573);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 34);
+            this.button2.Size = new System.Drawing.Size(112, 28);
             this.button2.TabIndex = 15;
             this.button2.Text = "View favourites";
             this.button2.UseVisualStyleBackColor = true;
@@ -211,9 +200,9 @@
             // 
             // Form3_MovieList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1625, 790);
+            this.ClientSize = new System.Drawing.Size(1028, 609);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
@@ -227,7 +216,6 @@
             this.Controls.Add(this.m_picturebox_poster);
             this.Controls.Add(this.m_richTextBox_details);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form3_MovieList";
             this.Text = "Movies List";
             this.Load += new System.EventHandler(this.Form3_MovieList_Load);

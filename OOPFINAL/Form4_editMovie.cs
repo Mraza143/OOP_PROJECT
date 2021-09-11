@@ -106,9 +106,7 @@ namespace MOVIEFLIX_OOP
             using(m_dbConnection = new SQLiteConnection("Data Source=movieflix.sqlite"))
             {
                 m_dbConnection.Open();
-
                
-                
                     SQLiteParameter name            = new SQLiteParameter("@name",              System.Data.DbType.String);
                     SQLiteParameter director        = new SQLiteParameter("@director",          System.Data.DbType.String);
                     SQLiteParameter actor_main      = new SQLiteParameter("@actor_main",        System.Data.DbType.String);
@@ -192,26 +190,8 @@ namespace MOVIEFLIX_OOP
             {
                 m_textBox_filepath.Text = dlg.FileName;
             }
-
             dlg.Dispose();
         }
-
-        private void m_textBox_director_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void m_richTextBox_summary_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
         //#####################################################################################################################################################################
     }
 }
