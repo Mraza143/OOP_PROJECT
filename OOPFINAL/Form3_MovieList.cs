@@ -17,8 +17,9 @@ namespace MOVIEFLIX_OOP
 //###########################################################################################################################################################################
         //GLOVARS
         //
-        SQLiteConnection m_dbConnection = new SQLiteConnection("Data Source=IMDBClone.sqlite;Version=3;");
+        SQLiteConnection m_dbConnection = new SQLiteConnection("Data Source=movieflix.sqlite;Version=3;");
         SQLiteCommand sql_query;
+
         SQLiteDataReader reader;
         int i; //need this for identifying clicked poster..
         int movieID; //needed for editing clicked poster/movie...ugh. .
@@ -57,10 +58,11 @@ namespace MOVIEFLIX_OOP
 //###########################################################################################################################################################################
         private void Form3_MovieList_Load(object sender, EventArgs e)
         {
-            //this.Refresh();
+            
 
             m_label_username.Text = welcome;
             this.AutoScroll = true;
+            
 
             
 
@@ -113,27 +115,30 @@ namespace MOVIEFLIX_OOP
                 }
 
                 reader.Dispose();
-
-                PictureBox[] picturebox = new PictureBox[m_numberOfPictures];                   //create the array of PictureBox type
-                int x = 0; int y = 60;                                                           // the coordinates
+                
+                PictureBox[] picturebox = new PictureBox[m_numberOfPictures];
+                
+            
+                int x = 0; int y = 60;            // the coordinates
 
                 for (i = 0; i < m_numberOfPictures; i++)
                 {
                     x++;
-                    picturebox[i] = new PictureBox();
-                    this.Controls.Add(picturebox[i]);
+                picturebox[i] = new PictureBox();
+                this.Controls.Add(picturebox[i]);
 
-                    if (i % 6 == 0) { x = 0; y = y + 110; }
+                    if (i % 4 == 0) { x = 0; y = y + 190; }
 
                     //picturebox[i].BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-                    picturebox[i].Location = new Point(x * 75 + 10, y);
+                    picturebox[i].Location = new Point(x * 140 + 10, y);
 
-                    picturebox[i].Size = new Size(75, 100);
+                    picturebox[i].Size = new Size(140, 190);
                     
 
                     picturebox[i].SizeMode = PictureBoxSizeMode.Zoom;
+                   
 
-                    sql_query = new SQLiteCommand("select id,poster,rowid from tmp where rowid=" + (i + 1), m_dbConnection);
+                     sql_query = new SQLiteCommand("select id,poster,rowid from tmp where rowid=" + (i + 1), m_dbConnection);
                     //sql_query = new SQLiteCommand("select poster from tmp where rowid=" + (i+1), m_dbConnection);
                     reader = sql_query.ExecuteReader();
                     // **************try-catch block****************************
@@ -167,7 +172,10 @@ namespace MOVIEFLIX_OOP
 //###########################################################################################################################################################################
         void handleClick(object sender, EventArgs e)
         {
-            m_dbConnection.Open();
+            if (m_dbConnection.State != ConnectionState.Open)
+            {
+                m_dbConnection.Open();
+            }
             PictureBox picbox = sender as PictureBox;
             i = Convert.ToInt32(picbox.Name);
             //DEBUG : MessageBox.Show("clicked : " + picbox.Name);
@@ -227,7 +235,7 @@ namespace MOVIEFLIX_OOP
         private void m_button_logout_Click(object sender, EventArgs e)
         {
             //m_dbConnection.Open();
-            using (SQLiteConnection con = new SQLiteConnection("Data Source=imdbclone.sqlite;Version=3;"))
+            using (SQLiteConnection con = new SQLiteConnection("Data Source=movieflix.sqlite;Version=3;"))
             {
 
 
@@ -247,7 +255,38 @@ namespace MOVIEFLIX_OOP
             this.Close();
 
         }
-//###########################################################################################################################################################################
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (m_dbConnection.State != ConnectionState.Open)
+            {                
+                m_dbConnection.Open();
+            }
+            sql_query = new SQLiteCommand("update movies set isFavourite=1 where id=" +movieID, m_dbConnection);
+            sql_query.ExecuteNonQuery();
+            
+            
+            
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form6_favourites f6 = new Form6_favourites();
+            f6.ShowDialog();
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form7_watchList f7 = new Form7_watchList();
+            f7.ShowDialog();
+
+        }
+
+        //###########################################################################################################################################################################
         private void m_button_search_Click(object sender, EventArgs e)
         {
             

@@ -65,17 +65,29 @@
     <Compile Include="Form3_MovieList.Designer.cs">
       <DependentUpon>Form3_MovieList.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form4_addMovie.cs">
+    <Compile Include="Form5_addMovie.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form4_addMovie.Designer.cs">
-      <DependentUpon>Form4_addMovie.cs</DependentUpon>
+    <Compile Include="Form5_addMovie.Designer.cs">
+      <DependentUpon>Form5_addMovie.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form5_editMovie.cs">
+    <Compile Include="Form4_editMovie.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form5_editMovie.Designer.cs">
-      <DependentUpon>Form5_editMovie.cs</DependentUpon>
+    <Compile Include="Form4_editMovie.Designer.cs">
+      <DependentUpon>Form4_editMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form6_favourites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form6_favourites.Designer.cs">
+      <DependentUpon>Form6_favourites.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form7_watchList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form7_watchList.Designer.cs">
+      <DependentUpon>Form7_watchList.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities.cs" />
     <Compile Include="Program.cs" />
@@ -89,11 +101,17 @@
     <EmbeddedResource Include="Form3_MovieList.resx">
       <DependentUpon>Form3_MovieList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form4_addMovie.resx">
-      <DependentUpon>Form4_addMovie.cs</DependentUpon>
+    <EmbeddedResource Include="Form5_addMovie.resx">
+      <DependentUpon>Form5_addMovie.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form5_editMovie.resx">
-      <DependentUpon>Form5_editMovie.cs</DependentUpon>
+    <EmbeddedResource Include="Form4_editMovie.resx">
+      <DependentUpon>Form4_editMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form6_favourites.resx">
+      <DependentUpon>Form6_favourites.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form7_watchList.resx">
+      <DependentUpon>Form7_watchList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -103,7 +121,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="movieflix.sqlite" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -116,6 +136,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\axcvb Untitled.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

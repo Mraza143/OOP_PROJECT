@@ -39,7 +39,7 @@ namespace MOVIEFLIX_OOP
             {
                 password_md5 = Utilities.md5_generator(password);
 
-                m_dbConnection = new SQLiteConnection("Data Source=imdbclone.sqlite;Version=3;");
+                m_dbConnection = new SQLiteConnection("Data Source=movieflix.sqlite;Version=3;");
                 m_dbConnection.Open();
 
                 sql_query = new SQLiteCommand(@"insert into users(email,password) values ('" + email + "','" + password_md5 + "')", m_dbConnection);
