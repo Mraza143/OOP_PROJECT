@@ -85,7 +85,6 @@
             this.label5.Size = new System.Drawing.Size(96, 25);
             this.label5.TabIndex = 25;
             this.label5.Text = "Summary";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
@@ -159,7 +158,6 @@
             this.m_richTextBox_summary.Size = new System.Drawing.Size(323, 152);
             this.m_richTextBox_summary.TabIndex = 18;
             this.m_richTextBox_summary.Text = "";
-            this.m_richTextBox_summary.TextChanged += new System.EventHandler(this.m_richTextBox_summary_TextChanged);
             // 
             // m_textBox_actorSecondary
             // 
@@ -184,7 +182,6 @@
             this.m_textBox_director.Name = "m_textBox_director";
             this.m_textBox_director.Size = new System.Drawing.Size(323, 22);
             this.m_textBox_director.TabIndex = 15;
-            this.m_textBox_director.TextChanged += new System.EventHandler(this.m_textBox_director_TextChanged);
             // 
             // m_textBox_name
             // 
