@@ -58,7 +58,7 @@ namespace MOVIEFLIX_OOP
 //###########################################################################################################################################################################
         private void Form3_MovieList_Load(object sender, EventArgs e)
         {
-            //this.Refresh();
+            
 
             m_label_username.Text = welcome;
             this.AutoScroll = true;
@@ -275,6 +275,14 @@ namespace MOVIEFLIX_OOP
             this.Hide();
             Form6_favourites f6 = new Form6_favourites();
             f6.ShowDialog();
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form7_watchList f7 = new Form7_watchList();
+            f7.ShowDialog();
 
         }
 
