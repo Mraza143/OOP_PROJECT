@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-
 using System.Data.SQLite;// We're going to use this ADO provider to
                          // enable SQLite support
 

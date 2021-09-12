@@ -136,7 +136,7 @@ namespace MOVIEFLIX_OOP
                 m_dbConnection.Open();
             }
             
-            sql_query = new SQLiteCommand("delete from watchList  where id=" + (idd -1), m_dbConnection);
+            sql_query = new SQLiteCommand("delete from watchList  where id=" + (idd ), m_dbConnection);
             //sql_query = new SQLiteCommand("select rowid,* from tmp a where rowid=" + (i + 1), m_dbConnection);
             sql_query.ExecuteNonQuery();
         }
