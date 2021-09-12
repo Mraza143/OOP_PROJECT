@@ -47,6 +47,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.m_picturebox_poster)).BeginInit();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +65,7 @@
             // m_picturebox_poster
             // 
             this.m_picturebox_poster.BackColor = System.Drawing.Color.White;
-            this.m_picturebox_poster.Location = new System.Drawing.Point(1632, 244);
+            this.m_picturebox_poster.Location = new System.Drawing.Point(1632, 257);
             this.m_picturebox_poster.Margin = new System.Windows.Forms.Padding(4);
             this.m_picturebox_poster.Name = "m_picturebox_poster";
             this.m_picturebox_poster.Size = new System.Drawing.Size(324, 359);
@@ -96,7 +97,7 @@
             // 
             // m_button_logout
             // 
-            this.m_button_logout.Location = new System.Drawing.Point(1739, 996);
+            this.m_button_logout.Location = new System.Drawing.Point(1764, 132);
             this.m_button_logout.Margin = new System.Windows.Forms.Padding(4);
             this.m_button_logout.Name = "m_button_logout";
             this.m_button_logout.Size = new System.Drawing.Size(99, 27);
@@ -108,51 +109,60 @@
             // m_label_username
             // 
             this.m_label_username.AutoSize = true;
-            this.m_label_username.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.m_label_username.Location = new System.Drawing.Point(1346, 58);
+            this.m_label_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_label_username.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.m_label_username.Location = new System.Drawing.Point(1456, 132);
             this.m_label_username.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.m_label_username.Name = "m_label_username";
             this.m_label_username.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.m_label_username.Size = new System.Drawing.Size(46, 17);
+            this.m_label_username.Size = new System.Drawing.Size(60, 24);
             this.m_label_username.TabIndex = 5;
             this.m_label_username.Text = "label1";
             this.m_label_username.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.m_label_username.Click += new System.EventHandler(this.m_label_username_Click);
             // 
             // m_textbox_search
             // 
             this.m_textbox_search.Location = new System.Drawing.Point(71, 276);
             this.m_textbox_search.Margin = new System.Windows.Forms.Padding(4);
             this.m_textbox_search.Name = "m_textbox_search";
-            this.m_textbox_search.Size = new System.Drawing.Size(132, 22);
+            this.m_textbox_search.Size = new System.Drawing.Size(226, 22);
             this.m_textbox_search.TabIndex = 6;
+            this.m_textbox_search.Text = "Search a Movie by any keyword";
             // 
             // m_button_search
             // 
-            this.m_button_search.Location = new System.Drawing.Point(226, 276);
+            this.m_button_search.BackColor = System.Drawing.Color.Black;
+            this.m_button_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_button_search.ForeColor = System.Drawing.Color.Ivory;
+            this.m_button_search.Location = new System.Drawing.Point(305, 276);
             this.m_button_search.Margin = new System.Windows.Forms.Padding(4);
             this.m_button_search.Name = "m_button_search";
-            this.m_button_search.Size = new System.Drawing.Size(161, 25);
+            this.m_button_search.Size = new System.Drawing.Size(128, 36);
             this.m_button_search.TabIndex = 7;
             this.m_button_search.Text = "Find...";
-            this.m_button_search.UseVisualStyleBackColor = true;
+            this.m_button_search.UseVisualStyleBackColor = false;
             this.m_button_search.Click += new System.EventHandler(this.m_button_search_Click);
             // 
             // m_button_findByGenre
             // 
-            this.m_button_findByGenre.Location = new System.Drawing.Point(226, 413);
+            this.m_button_findByGenre.BackColor = System.Drawing.Color.Black;
+            this.m_button_findByGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.m_button_findByGenre.ForeColor = System.Drawing.Color.Ivory;
+            this.m_button_findByGenre.Location = new System.Drawing.Point(174, 30);
             this.m_button_findByGenre.Margin = new System.Windows.Forms.Padding(4);
             this.m_button_findByGenre.Name = "m_button_findByGenre";
             this.m_button_findByGenre.Size = new System.Drawing.Size(133, 58);
             this.m_button_findByGenre.TabIndex = 9;
             this.m_button_findByGenre.Text = "Search";
-            this.m_button_findByGenre.UseVisualStyleBackColor = true;
+            this.m_button_findByGenre.UseVisualStyleBackColor = false;
             this.m_button_findByGenre.Click += new System.EventHandler(this.m_button_findByGenre_Click);
             // 
             // m_comboBox_genre2
             // 
             this.m_comboBox_genre2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_comboBox_genre2.FormattingEnabled = true;
-            this.m_comboBox_genre2.Location = new System.Drawing.Point(71, 455);
+            this.m_comboBox_genre2.Location = new System.Drawing.Point(8, 64);
             this.m_comboBox_genre2.Margin = new System.Windows.Forms.Padding(4);
             this.m_comboBox_genre2.Name = "m_comboBox_genre2";
             this.m_comboBox_genre2.Size = new System.Drawing.Size(132, 24);
@@ -160,9 +170,10 @@
             // 
             // m_comboBox_genre1
             // 
+            this.m_comboBox_genre1.BackColor = System.Drawing.SystemColors.HighlightText;
             this.m_comboBox_genre1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.m_comboBox_genre1.FormattingEnabled = true;
-            this.m_comboBox_genre1.Location = new System.Drawing.Point(71, 413);
+            this.m_comboBox_genre1.Location = new System.Drawing.Point(8, 23);
             this.m_comboBox_genre1.Margin = new System.Windows.Forms.Padding(4);
             this.m_comboBox_genre1.Name = "m_comboBox_genre1";
             this.m_comboBox_genre1.Size = new System.Drawing.Size(132, 24);
@@ -170,11 +181,14 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Location = new System.Drawing.Point(71, 309);
+            this.groupBox1.Controls.Add(this.m_button_findByGenre);
+            this.groupBox1.Controls.Add(this.m_comboBox_genre1);
+            this.groupBox1.Controls.Add(this.m_comboBox_genre2);
+            this.groupBox1.Location = new System.Drawing.Point(71, 320);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(303, 96);
+            this.groupBox1.Size = new System.Drawing.Size(362, 101);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Find Movie By Genre";
@@ -183,7 +197,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::OOPFINAL.Properties.Resources.axcvb_Untitled;
-            this.pictureBox1.Location = new System.Drawing.Point(626, 13);
+            this.pictureBox1.Location = new System.Drawing.Point(732, 38);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(344, 85);
@@ -223,7 +237,7 @@
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.AliceBlue;
+            this.label1.BackColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(-343, 1);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(2361, 252);
@@ -233,12 +247,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MidnightBlue;
+            this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.Ivory;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1920, 1051);
-            this.Controls.Add(this.m_button_findByGenre);
-            this.Controls.Add(this.m_comboBox_genre2);
-            this.Controls.Add(this.m_comboBox_genre1);
             this.Controls.Add(this.m_picturebox_poster);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -261,6 +273,7 @@
             this.Text = "Movies List";
             this.Load += new System.EventHandler(this.Form3_MovieList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.m_picturebox_poster)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

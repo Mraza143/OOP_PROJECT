@@ -121,10 +121,10 @@ namespace MOVIEFLIX_OOP
                 picturebox[i] = new PictureBox();
                 this.Controls.Add(picturebox[i]);
 
-                    if (i % 5 == 0) { x = 0; y = y + 280; }
+                    if (i % 5 == 0) { x = 0; y = y + 260; }
 
                     
-                    picturebox[i].Location = new Point(x * 205 + 100, y);                   
+                    picturebox[i].Location = new Point(x * 200 + 100, y);                   
                     picturebox[i].Size = new Size(200, 260);
                     picturebox[i].SizeMode = PictureBoxSizeMode.Zoom;
                    
@@ -278,6 +278,11 @@ namespace MOVIEFLIX_OOP
         }
 
         private void m_richTextBox_details_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void m_label_username_Click(object sender, EventArgs e)
         {
 
         }
