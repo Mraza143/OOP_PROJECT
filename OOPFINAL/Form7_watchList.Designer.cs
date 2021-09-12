@@ -29,6 +29,7 @@ namespace MOVIEFLIX_OOP
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form7_watchList));
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -37,27 +38,30 @@ namespace MOVIEFLIX_OOP
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(354, 41);
+            this.label1.Location = new System.Drawing.Point(266, 33);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 17);
+            this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "WatchList";
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(340, 100);
+            this.comboBox1.Location = new System.Drawing.Point(255, 81);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.Size = new System.Drawing.Size(92, 21);
             this.comboBox1.TabIndex = 1;
             this.comboBox1.Text = "Select a movie";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(803, 213);
+            this.button1.Location = new System.Drawing.Point(602, 173);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(195, 40);
+            this.button1.Size = new System.Drawing.Size(146, 32);
             this.button1.TabIndex = 2;
             this.button1.Text = "Remove From WatchList";
             this.button1.UseVisualStyleBackColor = true;
@@ -65,15 +69,21 @@ namespace MOVIEFLIX_OOP
             // 
             // Form7_watchList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1028, 639);
+=======
+            this.ClientSize = new System.Drawing.Size(771, 519);
+>>>>>>> 13bf84ad9a40482953a60c14e2245363fde19ef0
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form7_watchList";
-            this.Text = "Form7_watchList";
+            this.Text = "WatchList";
             this.Load += new System.EventHandler(this.Form7_watchList_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

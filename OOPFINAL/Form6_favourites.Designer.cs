@@ -29,27 +29,35 @@ namespace MOVIEFLIX_OOP
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form6_favourites));
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(222, 28);
+            this.label1.Location = new System.Drawing.Point(166, 23);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 17);
+            this.label1.Size = new System.Drawing.Size(56, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Favourites";
             // 
             // Form6_favourites
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1137, 668);
+=======
+            this.ClientSize = new System.Drawing.Size(853, 543);
+>>>>>>> 13bf84ad9a40482953a60c14e2245363fde19ef0
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form6_favourites";
-            this.Text = "Form6_favourites";
+            this.Text = "Favourites";
             this.Load += new System.EventHandler(this.Form6_favourites_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
