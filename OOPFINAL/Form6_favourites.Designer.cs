@@ -47,12 +47,7 @@ namespace MOVIEFLIX_OOP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
-            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1137, 668);
-=======
-            this.ClientSize = new System.Drawing.Size(853, 543);
->>>>>>> 13bf84ad9a40482953a60c14e2245363fde19ef0
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);

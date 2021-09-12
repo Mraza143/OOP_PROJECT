@@ -71,12 +71,7 @@ namespace MOVIEFLIX_OOP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
-            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1028, 639);
-=======
-            this.ClientSize = new System.Drawing.Size(771, 519);
->>>>>>> 13bf84ad9a40482953a60c14e2245363fde19ef0
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
