@@ -63,14 +63,14 @@ namespace MOVIEFLIX_OOP
                 labels[i] = new Label();
                 
 
-                if (ii % 4 == 0) { x = 0; y = y + 240; }
+                if (ii % 7 == 0) { x = 0; y = y + 280; }
 
                 //picturebox[i].BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-                picturebox[i].Location = new Point(x * 140 + 10, y);
-                labels[i].Location = new Point(x * 140 + 10, y+190);
+                picturebox[i].Location = new Point(x * 170 + 10, y);
+                labels[i].Location = new Point(x * 170 + 10, y+240);
 
 
-                picturebox[i].Size = new Size(140, 190);
+                picturebox[i].Size = new Size(170, 230);
                 labels[i].Size = new Size(50 , 20);
                 labels[i].BackColor = Color.LightYellow;
                 labels[i].Visible = true;
