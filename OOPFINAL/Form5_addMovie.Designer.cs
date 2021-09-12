@@ -264,7 +264,6 @@
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form4_addMovie";
             this.Text = "Add Movie";
-            this.Load += new System.EventHandler(this.Form4_addMovie_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

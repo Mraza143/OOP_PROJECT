@@ -11,13 +11,11 @@ using System.IO;
 using System.Data.SQLite;// We're going to use this ADO provider to
                          // enable SQLite support
 
-//#############################################################################################################################################################
 namespace MOVIEFLIX_OOP
 {
     public partial class Form1_signin : Form
     {
-
-        // global_variables
+        // global variables
         
         SQLiteConnection m_dbConnection_signin; // The main DB Connection
         SQLiteCommand sql_query_signin;         // a general purpose query, can be overloaded as req.
@@ -25,15 +23,10 @@ namespace MOVIEFLIX_OOP
         String response;                        // a generalized response string for MessageBoxes, reused as req.
         
 
-
-// #############################################################################################################################################################
-
         public Form1_signin()
         {
             InitializeComponent();
         }
-
-//#############################################################################################################################################################
 
         private void m_label_register_Click(object sender, EventArgs e)
         {
@@ -42,8 +35,6 @@ namespace MOVIEFLIX_OOP
                                             //this.Close();
         }
 
-
-//#############################################################################################################################################################
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -75,9 +66,6 @@ namespace MOVIEFLIX_OOP
 
                 con.Open();
                 // /connection string and open
-
-
-
 
 
                 // existence check for users table
@@ -129,7 +117,6 @@ namespace MOVIEFLIX_OOP
                         }//ed while
                     
                 
-
                 
             }//end using con
 
@@ -137,7 +124,6 @@ namespace MOVIEFLIX_OOP
     //
     //end of form1_load event
 
-// #############################################################################################################################################################
 
         private void m_button_login_Click(object sender, EventArgs e)
         {
@@ -155,8 +141,6 @@ namespace MOVIEFLIX_OOP
 
             username = m_textBox_email.Text;
             password = m_textBox_password.Text;
-
-
 
             
 
@@ -199,7 +183,6 @@ namespace MOVIEFLIX_OOP
             }
         }
 
-// #############################################################################################################################################################
         private void m_textBox_password_Click(object sender, EventArgs e)
         {
           
@@ -207,13 +190,11 @@ namespace MOVIEFLIX_OOP
            
         }
 
-        // ############################################################################################################################################################# 
         private void m_textBox_email_Click(object sender, EventArgs e)
         {
           
                 m_textBox_email.Text = "";
            
         }
-// #############################################################################################################################################################
     }
 }

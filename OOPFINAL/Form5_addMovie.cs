@@ -12,26 +12,21 @@ using System.IO;
 
 namespace MOVIEFLIX_OOP
 {
-//######################################################################################################################################################################
     public partial class Form4_addMovie : Form
     {
-        //  GloVars
-        //
+        //  Global Variables
+        
         SQLiteConnection m_dbConnection = new SQLiteConnection("Data Source=movieflix.sqlite;Version=3;");
         SQLiteCommand sql_query;
         SQLiteDataReader reader;
         string username;
-        //
-        // /GloVars
-//######################################################################################################################################################################
+        
         public Form4_addMovie(string x)
         {
             InitializeComponent();
             username = x;
         }
- //######################################################################################################################################################################
        
- //######################################################################################################################################################################
         private void m_button_browse_Click(object sender, EventArgs e)
         {
             OpenFileDialog dlg = new OpenFileDialog();
@@ -45,7 +40,6 @@ namespace MOVIEFLIX_OOP
 
             dlg.Dispose();
         }
-//######################################################################################################################################################################
         private void m_button_addMovie_Click(object sender, EventArgs e)
         {
             m_dbConnection.Open();
@@ -79,15 +73,12 @@ namespace MOVIEFLIX_OOP
                 
             }
            
-
-           
-            sql_query.Parameters.Add(name);
+           sql_query.Parameters.Add(name);
             sql_query.Parameters.Add(director);
             sql_query.Parameters.Add(actor_main);
             sql_query.Parameters.Add(actor_secondary);
             sql_query.Parameters.Add(genre_main);
             sql_query.Parameters.Add(genre_secondary);
-
             sql_query.Parameters.Add(summary);
             sql_query.Parameters.Add(poster);
 
@@ -129,11 +120,5 @@ namespace MOVIEFLIX_OOP
             this.Close();
             f3.ShowDialog();
         }
-
-        private void Form4_addMovie_Load(object sender, EventArgs e)
-        {
-
-        }
-        //######################################################################################################################################################################
     }
 }
