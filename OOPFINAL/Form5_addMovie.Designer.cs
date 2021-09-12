@@ -218,9 +218,9 @@
             this.label9.Location = new System.Drawing.Point(7, 185);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(77, 20);
+            this.label9.Size = new System.Drawing.Size(88, 20);
             this.label9.TabIndex = 18;
-            this.label9.Text = "Genre II";
+            this.label9.Text = "Sub Genre";
             // 
             // textBox2
             // 
