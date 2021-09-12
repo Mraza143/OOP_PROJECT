@@ -19,7 +19,6 @@ namespace MOVIEFLIX_OOP
         //
         SQLiteConnection m_dbConnection = new SQLiteConnection("Data Source=movieflix.sqlite;Version=3;");
         SQLiteCommand sql_query;
-
         SQLiteDataReader reader;
         int i; //need this for identifying clicked poster..
         int movieID; //needed for editing clicked poster/movie...ugh. .
@@ -58,14 +57,9 @@ namespace MOVIEFLIX_OOP
 //###########################################################################################################################################################################
         private void Form3_MovieList_Load(object sender, EventArgs e)
         {
-            
-
             m_label_username.Text = welcome;
             this.AutoScroll = true;
             
-
-            
-
             genres = new string[] {"Action/Adventure","Biopic/Historical","Comedy","Drama","Documentary","Fantasy","Horror","Romance","Sci-Fi","Superhero","Thriller/Mystery"};
             for (int i = 0; i < genres.Length; i++)
             {
@@ -119,7 +113,7 @@ namespace MOVIEFLIX_OOP
                 PictureBox[] picturebox = new PictureBox[m_numberOfPictures];
                 
             
-                int x = 0; int y = 60;            // the coordinates
+                int x = 0; int y = 260;            // the coordinates
 
                 for (i = 0; i < m_numberOfPictures; i++)
                 {
@@ -127,14 +121,11 @@ namespace MOVIEFLIX_OOP
                 picturebox[i] = new PictureBox();
                 this.Controls.Add(picturebox[i]);
 
-                    if (i % 4 == 0) { x = 0; y = y + 190; }
+                    if (i % 5 == 0) { x = 0; y = y + 280; }
 
-                    //picturebox[i].BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-                    picturebox[i].Location = new Point(x * 140 + 10, y);
-
-                    picturebox[i].Size = new Size(140, 190);
                     
-
+                    picturebox[i].Location = new Point(x * 205 + 100, y);                   
+                    picturebox[i].Size = new Size(200, 260);
                     picturebox[i].SizeMode = PictureBoxSizeMode.Zoom;
                    
 
@@ -169,7 +160,6 @@ namespace MOVIEFLIX_OOP
            
             //###############################################END SEARCHING BY SEARCHSTRING##################################################
         }
-//###########################################################################################################################################################################
         void handleClick(object sender, EventArgs e)
         {
             if (m_dbConnection.State != ConnectionState.Open)
@@ -185,7 +175,8 @@ namespace MOVIEFLIX_OOP
             while (reader.Read())
             {
                 m_richTextBox_details.Text = "";
-                m_richTextBox_details.AppendText(reader["id"] + "\n" + "ROWID: "+reader["rowid"] + "\n" + reader["name"] + "\n" + reader["director"] + "\n" + reader["actor_main"] + "\n" + reader["actor_secondary"] + "\n" + reader["genre_main"]+", "+reader["genre_secondary"] + "\n" + reader["summary"] + "\n");
+                m_richTextBox_details.AppendText( "Name: " + reader["name"] + "\n" + "Directed by: " + reader["director"] + "\n" + "LEAD: " + reader["actor_main"] + "\n" + "SUPPORTING ACTORS: " + reader["actor_secondary"] + "\n" + "MAIN GENRE: " + reader["genre_main"] + "\n" + "SECONDARY GENRE: " + reader["genre_secondary"] + "\n" + "PLOT: " + reader["summary"] + "\n");
+                //m_richTextBox_details.AppendText(reader["id"] + "\n" + "ROWID: "+reader["rowid"] + "\n" + "Name: " + reader["name"] + "\n" + "Directed by: " + reader["director"] + "\n" + "LEAD: " + reader["actor_main"] + "\n" + "SUPPORTING ACTORS: " + reader["actor_secondary"] + "\n" + "MAIN GENRE: " + reader["genre_main"]+  "\n" + "SECONDARY GENRE: " + reader["genre_secondary"] + "\n" + "PLOT: " + reader["summary"] + "\n");
                 movieID = Convert.ToInt32(reader["id"]); //glovar to track movie to edit
 
                 if (reader["poster"] != DBNull.Value)
@@ -283,6 +274,11 @@ namespace MOVIEFLIX_OOP
             this.Hide();
             Form7_watchList f7 = new Form7_watchList();
             f7.ShowDialog();
+
+        }
+
+        private void m_richTextBox_details_TextChanged(object sender, EventArgs e)
+        {
 
         }
 
