@@ -19,6 +19,7 @@ namespace MOVIEFLIX_OOP
         int i = 0;
         int ii = 0;
         int idd = 0;
+        int index = 0;
         public Form7_watchList()
         {
             InitializeComponent();
@@ -38,7 +39,7 @@ namespace MOVIEFLIX_OOP
 
             reader.Dispose();
 
-            sql_query = new SQLiteCommand("select count(*) from watchList", m_dbConnection);
+            sql_query = new SQLiteCommand("select count(*) from movies", m_dbConnection);
             int m_numberOfPictures = 0;
             reader = sql_query.ExecuteReader();
             while (reader.Read())
@@ -60,10 +61,9 @@ namespace MOVIEFLIX_OOP
                 x++;
                 picturebox[i] = new PictureBox();
                 labels[i] = new Label();
-                this.Controls.Add(picturebox[i]);
-                this.Controls.Add(labels[i]);
+                
 
-                if (i % 4 == 0) { x = 0; y = y + 240; }
+                if (ii % 4 == 0) { x = 0; y = y + 240; }
 
                 //picturebox[i].BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
                 picturebox[i].Location = new Point(x * 140 + 10, y);
@@ -79,8 +79,8 @@ namespace MOVIEFLIX_OOP
 
                 picturebox[i].SizeMode = PictureBoxSizeMode.Zoom;
 
-
-                sql_query = new SQLiteCommand("select id,poster,name from watchList where id=" + (i + 1), m_dbConnection);
+                //sql_query = new SQLiteCommand("select id,poster,name from watchList", m_dbConnection);
+                sql_query = new SQLiteCommand("select id,poster,name from watchList where id=" + (i+1 ), m_dbConnection);
                 //sql_query = new SQLiteCommand("select poster from tmp where rowid=" + (i+1), m_dbConnection);
                 reader = sql_query.ExecuteReader();
                 // **************try-catch block****************************
@@ -94,6 +94,8 @@ namespace MOVIEFLIX_OOP
                             picturebox[i].Image = Utilities.ByteToImage(a);
                             labels[i].Text = Convert.ToString(reader["name"]);
                             ii++;
+                            this.Controls.Add(picturebox[i]);
+                            this.Controls.Add(labels[i]);
                         }
                         else { picturebox[i].ImageLocation = @"placeholder.png"; }
                     }
@@ -120,11 +122,12 @@ namespace MOVIEFLIX_OOP
             {
                 m_dbConnection.Open();
             }
-            int index = comboBox1.SelectedIndex;
+             index = comboBox1.SelectedIndex;
             //sql_query = new SQLiteCommand("select id,poster,name from watchList where id=" + (i + 1), m_dbConnection);
-            sql_query = new SQLiteCommand("Insert into watchList(name,poster) select name , poster FROM movies where id=" + (index + 1), m_dbConnection);
+            sql_query = new SQLiteCommand("Insert into watchList(id,name,poster) select id ,name , poster FROM movies where id=" + (index + 1), m_dbConnection);
             sql_query.ExecuteNonQuery();
-            this.Refresh();
+            //this.Refresh();
+            
              
 
         }

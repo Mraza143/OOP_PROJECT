@@ -45,6 +45,7 @@ namespace MOVIEFLIX_OOP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1137, 668);
             this.Controls.Add(this.label1);
             this.Name = "Form6_favourites";
