@@ -277,14 +277,9 @@ namespace MOVIEFLIX_OOP
 
         }
 
-        private void m_richTextBox_details_TextChanged(object sender, EventArgs e)
+        private void m_textbox_search_click(object sender, EventArgs e)
         {
-
-        }
-
-        private void m_label_username_Click(object sender, EventArgs e)
-        {
-
+            m_textbox_search.Text = "";
         }
 
         //###########################################################################################################################################################################
