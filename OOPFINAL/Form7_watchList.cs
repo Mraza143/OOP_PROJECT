@@ -17,12 +17,18 @@ namespace MOVIEFLIX_OOP
         SQLiteCommand sql_query;
         SQLiteDataReader reader;
         int i = 0;
-        int ii = 0;
-        int idd = 0;
+        int rowChanger = 0;
+        int deleteId = 0;
         int index = 0;
+        string username;
         public Form7_watchList()
         {
             InitializeComponent();
+        }
+        public Form7_watchList(string username)
+        {
+            InitializeComponent();
+            this.username = username;
         }
 
         private void Form7_watchList_Load(object sender, EventArgs e)
@@ -33,8 +39,6 @@ namespace MOVIEFLIX_OOP
             while (reader.Read())
             {
                 comboBox1.Items.Add(Convert.ToString(reader["name"]));         
-                //get number of pictures to be rendered, assign to a variable
-
             }
 
             reader.Dispose();
@@ -47,14 +51,11 @@ namespace MOVIEFLIX_OOP
                 m_numberOfPictures = Convert.ToInt32(reader["count(*)"]);                   //get number of pictures to be rendered, assign to a variable
 
             }
-
             reader.Dispose();
 
             PictureBox[] picturebox = new PictureBox[m_numberOfPictures];
             Label[] labels = new Label[m_numberOfPictures +1];
-
-
-            int x = 0; int y = 60;            // the coordinates
+            int x = 0; int y = 60;
 
             for (i = 0; i < m_numberOfPictures; i++)
             {
@@ -63,15 +64,13 @@ namespace MOVIEFLIX_OOP
                 labels[i] = new Label();
                 
 
-                if (ii % 4 == 0) { x = 0; y = y + 240; }
-
-                //picturebox[i].BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-                picturebox[i].Location = new Point(x * 140 + 10, y);
-                labels[i].Location = new Point(x * 140 + 10, y+190);
+                if (rowChanger % 7 == 0) { x = 0; y = y + 280; }            
+                picturebox[i].Location = new Point(x * 170 + 10, y);
+                labels[i].Location = new Point(x * 170 + 10, y+240);
 
 
-                picturebox[i].Size = new Size(140, 190);
-                labels[i].Size = new Size(50 , 20);
+                picturebox[i].Size = new Size(170, 230);
+                labels[i].Size = new Size(100 , 20);
                 labels[i].BackColor = Color.LightYellow;
                 labels[i].Visible = true;
                 labels[i].BringToFront();
@@ -79,11 +78,9 @@ namespace MOVIEFLIX_OOP
 
                 picturebox[i].SizeMode = PictureBoxSizeMode.Zoom;
 
-                //sql_query = new SQLiteCommand("select id,poster,name from watchList", m_dbConnection);
-                sql_query = new SQLiteCommand("select id,poster,name from watchList where id=" + (i+1 ), m_dbConnection);
-                //sql_query = new SQLiteCommand("select poster from tmp where rowid=" + (i+1), m_dbConnection);
-                reader = sql_query.ExecuteReader();
-                // **************try-catch block****************************
+                
+                sql_query = new SQLiteCommand("select id,poster,name from watchList where id=" + (i+1 ), m_dbConnection);              
+                reader = sql_query.ExecuteReader();               
                 try
                 {
                     while (reader.Read())
@@ -93,7 +90,7 @@ namespace MOVIEFLIX_OOP
                             byte[] a = (System.Byte[])reader["poster"];
                             picturebox[i].Image = Utilities.ByteToImage(a);
                             labels[i].Text = Convert.ToString(reader["name"]);
-                            ii++;
+                            rowChanger++;
                             this.Controls.Add(picturebox[i]);
                             this.Controls.Add(labels[i]);
                         }
@@ -104,8 +101,7 @@ namespace MOVIEFLIX_OOP
                 catch (Exception exc)
                 {
                     MessageBox.Show(exc.Message, "DB_ERROR");
-                }
-                // **************/try-catch block****************************
+                }                
                 picturebox[i].Name = "" + i;
                 picturebox[i].Click += handleClick;
 
@@ -113,7 +109,6 @@ namespace MOVIEFLIX_OOP
             }// end of for loop
 
             m_dbConnection.Close();
-
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -123,13 +118,13 @@ namespace MOVIEFLIX_OOP
                 m_dbConnection.Open();
             }
              index = comboBox1.SelectedIndex;
-            //sql_query = new SQLiteCommand("select id,poster,name from watchList where id=" + (i + 1), m_dbConnection);
+            
             sql_query = new SQLiteCommand("Insert into watchList(id,name,poster) select id ,name , poster FROM movies where id=" + (index + 1), m_dbConnection);
             sql_query.ExecuteNonQuery();
-            //this.Refresh();
             
-             
-
+            this.Hide();
+            Form7_watchList f7 = new Form7_watchList();
+            f7.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -138,12 +133,14 @@ namespace MOVIEFLIX_OOP
             {
                 m_dbConnection.Open();
             }
-            
-            sql_query = new SQLiteCommand("delete from watchList  where id=" + (idd +1 ), m_dbConnection);
-            //sql_query = new SQLiteCommand("select rowid,* from tmp a where rowid=" + (i + 1), m_dbConnection);
-            sql_query.ExecuteNonQuery();
-        }
 
+            sql_query = new SQLiteCommand("delete from watchList  where id=" + (deleteId + 1), m_dbConnection);
+            sql_query.ExecuteNonQuery();
+            this.Hide();
+            Form7_watchList f7 = new Form7_watchList();
+            f7.ShowDialog();
+
+        }
         private void handleClick(object sender, EventArgs e)
         {
             if (m_dbConnection.State != ConnectionState.Open)
@@ -151,10 +148,17 @@ namespace MOVIEFLIX_OOP
                 m_dbConnection.Open();
             }
             PictureBox picbox = sender as PictureBox;
-            idd = Convert.ToInt32(picbox.Name);
-            //sql_query = new SQLiteCommand("delete from watchList  where id=" + (idd + 1), m_dbConnection);
-            //sql_query = new SQLiteCommand("select rowid,* from tmp a where rowid=" + (i + 1), m_dbConnection);
-            //sql_query.ExecuteNonQuery();
+            deleteId = Convert.ToInt32(picbox.Name);           
+        }
+
+        private void button_home_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            //show new form
+            Form3_MovieList f3 = new Form3_MovieList(username, "", false);
+            f3.ShowDialog();
+            
+            this.Close();
         }
     }
 }

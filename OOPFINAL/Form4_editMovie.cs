@@ -15,46 +15,47 @@ namespace MOVIEFLIX_OOP
 
     public partial class Form5_editMovie : Form
     {
-                                                                                           // Defining variables
-        SQLiteConnection m_dbConnection;                                                  // connection string   
-        SQLiteCommand sql_query;                                                          // query
-        SQLiteDataReader reader;                                                          // datareader object
+        
+        SQLiteConnection m_dbConnection;
+        SQLiteCommand sql_query;
+        SQLiteDataReader reader;
         int i;
         string username;
         bool photoIsEmpty;
         string[] genres;
-
-
+        //
+        // /GloVars
+//#####################################################################################################################################################################
         public Form5_editMovie()                                                            //DEFAULT CONSTRUCTOR
         {
             InitializeComponent();
         }
-
-        public Form5_editMovie(int id,string x,string[] genres)                                               
-                                                                              //OVERLOADING CONSTRUCTOR TO RECEIVE CURRENT ACTIVE RECORD FROM Form3
+//#####################################################################################################################################################################   
+        public Form5_editMovie(int id,string x,string[] genres)                                                      //OVERLOADING CONSTRUCTOR TO RECEIVE IDENTIFIER OF 
+                                                                                            //CURRENT ACTIVE RECORD FROM Form3
         {
             InitializeComponent();
             username = x;
             i = id;
             this.genres = genres;                                                     
         }
-
-        private void Form5_editMovie_Load(object sender, EventArgs e)         //SINCE THIS IS EDITING, FILL UP FIELDS WITH DETAILS OF CURRENTLY ACTIVE RECORD
-
+//#####################################################################################################################################################################
+        private void Form5_editMovie_Load(object sender, EventArgs e)                       //SINCE THIS IS EDITING, FILL UP FIELDS WITH DETAILS OF 
+                                                                                            //CURRENTLY ACTIVE RECORD
         {
-                                                                                 
-            for (int x = 0; x < genres.Length;x++)                            //Fill up the genre dropdown box by using for loop
+            //Fill up the genre dropdown box 
+            for (int x = 0; x < genres.Length;x++ )
             {
                 m_comboBox_genre1.Items.Add(genres[x]);
                 m_comboBox_genre2.Items.Add(genres[x]);
             }
- 
+            // /Fill up the genre dropdown box 
 
-                using (m_dbConnection = new SQLiteConnection("Data Source=movieflix.sqlite"))       // getting details of a specific movie from database 
+                using (m_dbConnection = new SQLiteConnection("Data Source=movieflix.sqlite"))
                 {
                     m_dbConnection.Open();
 
-                    
+                    //sql_query = new SQLiteCommand("select name,director,actor_main,actor_secondary,summary,(select count(*) from movies b where b.id>=a.id) as Rid from movies a where Rid="+i,m_dbConnection);
                     sql_query = new SQLiteCommand("select * from movies where id=" + i, m_dbConnection);
                     reader = sql_query.ExecuteReader();                                                     // this syntax assigns result of query to datareader object   
 
@@ -68,9 +69,7 @@ namespace MOVIEFLIX_OOP
                         m_comboBox_genre1.SelectedItem  = (reader["genre_main"]         != DBNull.Value) ? Convert.ToString(reader["genre_main"]) : "";
                         m_comboBox_genre2.SelectedItem =  (reader["genre_secondary"]    != DBNull.Value) ? Convert.ToString(reader["genre_secondary"]) : "";
                         m_richTextBox_summary.Text      = (reader["summary"]            != DBNull.Value) ? Convert.ToString(reader["summary"]) : "";
-                                                                                        
-                         // m_pictureBox_poster
-
+                        //m_pictureBox_poster goes here
                         if (reader["poster"] != DBNull.Value)
                         {
                             photoIsEmpty = false;                                 
@@ -86,7 +85,7 @@ namespace MOVIEFLIX_OOP
 
                 }
         }
-
+//#####################################################################################################################################################################
         private void m_button_cancel_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -94,13 +93,13 @@ namespace MOVIEFLIX_OOP
             f3.ShowDialog();
             this.Close();
         }
-
+//#####################################################################################################################################################################
         private void m_button_editConfirm_Click(object sender, EventArgs e)
         {
-                                                                                           //updating  database and  inserting values in database
+            //update database
             Image img;
             byte[] imageBytes;
-            string commandtext;   
+            string commandtext;
 
             
 
@@ -125,11 +124,11 @@ namespace MOVIEFLIX_OOP
                     genre_main.Value        =   m_comboBox_genre1.SelectedItem;
                     genre_secondary.Value  =   m_comboBox_genre2.SelectedItem;
 
-                    if(m_textBox_filepath.Text.Equals("")==false && photoIsEmpty==false) // it means we have an image     // 
+                    if(m_textBox_filepath.Text.Equals("")==false && photoIsEmpty==false) //changed for readability 11 jun 15
                     {
-
+                        // just have a string for the sqlitecommand instead v
                         commandtext = "update movies set name=@name,director=@director,actor_main=@actor_main,actor_secondary=@actor_secondary,genre_main=@genre_main,genre_secondary=@genre_secondary,summary=@summary,poster=@poster where id=" + i;
-
+                        // /just have a string for the sqlitecommand instead ^
                         sql_query = new SQLiteCommand(commandtext, m_dbConnection);
                         img = new Bitmap(m_textBox_filepath.Text);                                                // converts filepath into image 
                         imageBytes = Utilities.ImageToBytes(img, System.Drawing.Imaging.ImageFormat.Jpeg);        // converts image into binary form as we have to store it in database
@@ -158,10 +157,6 @@ namespace MOVIEFLIX_OOP
                         sql_query.Parameters.Add(summary);
                         
                     }
-
-                    
-                    
-
                     try
                     {
                         sql_query.ExecuteNonQuery();       
@@ -192,7 +187,7 @@ namespace MOVIEFLIX_OOP
                 m_textBox_filepath.Text = dlg.FileName;
             }
             dlg.Dispose();
-        }                          //??
-
+        }
+        //#####################################################################################################################################################################
     }
 }

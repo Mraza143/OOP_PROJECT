@@ -18,9 +18,15 @@ namespace MOVIEFLIX_OOP
         SQLiteDataReader reader;
         int i = 0;
         int ii = 0;
+        string username;
         public Form6_favourites()
         {
             InitializeComponent();
+        }
+        public Form6_favourites(string username)
+        {
+            InitializeComponent();
+            this.username = username;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -53,21 +59,17 @@ namespace MOVIEFLIX_OOP
                 picturebox[i] = new PictureBox();
                 this.Controls.Add(picturebox[i]);
 
-                if (i % 4 == 0) { x = 0; y = y + 190; }
-
-
-                picturebox[i].Location = new Point(x * 140 + 10, y);
-
-                picturebox[i].Size = new Size(140, 190);
-
-
+                if (i % 7 == 0) { x = 0; y = y + 230; }
+           
+                picturebox[i].Location = new Point(x * 180 + 10, y);
+                picturebox[i].Size = new Size(180, 230);
                 picturebox[i].SizeMode = PictureBoxSizeMode.Zoom;
 
 
-                sql_query = new SQLiteCommand("select id,poster from movies where isFavourite=1 AND  id=" + (i + 1), m_dbConnection);
-
+                sql_query = new SQLiteCommand("select id,poster from movies where isFavourite=1 AND  id=" + (i +1), m_dbConnection);
+                //sql_query = new SQLiteCommand("select poster from tmp where rowid=" + (i+1), m_dbConnection);
                 reader = sql_query.ExecuteReader();
-
+                // **************try-catch block****************************
                 try
                 {
                     while (reader.Read())
@@ -93,7 +95,63 @@ namespace MOVIEFLIX_OOP
             } //end of for loop
 
             m_dbConnection.Close();
+            /*m_dbConnection.Open();
+            sql_query = new SQLiteCommand("select count(*) from movies where isFavourite=1", m_dbConnection);
+            int m_numberOfPictures = 0;
+            reader = sql_query.ExecuteReader();
+            while (reader.Read())
+            {
+                m_numberOfPictures = Convert.ToInt32(reader["count(*)"]);                   //get number of pictures to be rendered, assign to a variable
+
+            }
+            reader.Dispose();
+
+            PictureBox[] picturebox = new PictureBox[m_numberOfPictures];
+
+
+            int x = 0; int y = 60;            // the coordinates
+
+            for (int i = 0; i < m_numberOfPictures; i++)
+            {
+                x++;
+                picturebox[i] = new PictureBox();
+                this.Controls.Add(picturebox[i]);
+
+                if (i % 4 == 0) { x = 0; y = y + 190; }
+
+                //picturebox[i].BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+                picturebox[i].Location = new Point(x * 140 + 10, y);
+
+                picturebox[i].Size = new Size(140, 190);
+                
+
+                picturebox[i].SizeMode = PictureBoxSizeMode.Zoom;
+                
+                sql_query = new SQLiteCommand("select poster from movies where  isFavourite= 1 AND id =" + i+1, m_dbConnection);
+                
+                reader = sql_query.ExecuteReader();
+                // **************try-catch block****************************
+                try
+                {
+                    while (reader.Read())
+                    {
+                        if (reader["poster"] != DBNull.Value)
+                        {
+                            byte[] a = (System.Byte[])reader["poster"];
+                            picturebox[i].Image = Utilities.ByteToImage(a);
+                        }
+                        else { picturebox[i].ImageLocation = @"placeholder.png"; }
+                    }
+                    reader.Dispose();
+                }
+                catch (Exception exc)
+                {
+                    MessageBox.Show(exc.Message, "DB_ERROR");
+                }
+
+            }
+            m_dbConnection.Close();*/
 
         }
-        }
+    }
 }

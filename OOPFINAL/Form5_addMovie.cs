@@ -99,18 +99,6 @@ namespace MOVIEFLIX_OOP
            this.Close();
             f3.ShowDialog();
 
-            
-           
-                /*FileStream stream = new FileStream(
-      filePath, FileMode.Open, FileAccess.Read);
-  BinaryReader reader = new BinaryReader(stream);
-
-  byte[] photo = reader.ReadBytes((int)stream.Length);
-
-  reader.Close();
-  stream.Close();
-                 return photo; */
-
         }
 
         private void m_button_cancel_Click(object sender, EventArgs e)
