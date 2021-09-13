@@ -264,7 +264,7 @@ namespace MOVIEFLIX_OOP
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form6_favourites f6 = new Form6_favourites();
+            Form6_favourites f6 = new Form6_favourites(username);
             f6.ShowDialog();
 
         }
@@ -272,7 +272,7 @@ namespace MOVIEFLIX_OOP
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form7_watchList f7 = new Form7_watchList();
+            Form7_watchList f7 = new Form7_watchList(username);
             f7.ShowDialog();
 
         }

@@ -20,9 +20,15 @@ namespace MOVIEFLIX_OOP
         int rowChanger = 0;
         int deleteId = 0;
         int index = 0;
+        string username;
         public Form7_watchList()
         {
             InitializeComponent();
+        }
+        public Form7_watchList(string username)
+        {
+            InitializeComponent();
+            this.username = username;
         }
 
         private void Form7_watchList_Load(object sender, EventArgs e)
@@ -143,6 +149,16 @@ namespace MOVIEFLIX_OOP
             }
             PictureBox picbox = sender as PictureBox;
             deleteId = Convert.ToInt32(picbox.Name);           
+        }
+
+        private void button_home_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            //show new form
+            Form3_MovieList f3 = new Form3_MovieList(username, "", false);
+            f3.ShowDialog();
+            
+            this.Close();
         }
     }
 }
