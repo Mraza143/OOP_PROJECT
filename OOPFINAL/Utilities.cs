@@ -10,10 +10,8 @@ using System.IO;
 
 namespace MOVIEFLIX_OOP
 {
-//############################################################################################################################################
     public static class Utilities
     {
-//############################################################################################################################################
         public static string md5_generator(string plaintext)
         {
             Encoder enc = System.Text.Encoding.Unicode.GetEncoder();

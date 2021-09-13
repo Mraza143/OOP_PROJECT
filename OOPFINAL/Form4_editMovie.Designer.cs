@@ -281,7 +281,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(400, 400);
             this.Name = "Form5_editMovie";
-            this.Text = "Edit Movie";
+            this.Text = "EDIT MOVIE";
             this.Load += new System.EventHandler(this.Form5_editMovie_Load);
             ((System.ComponentModel.ISupportInitialize)(this.m_picturebox_poster)).EndInit();
             this.ResumeLayout(false);

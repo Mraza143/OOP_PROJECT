@@ -205,7 +205,7 @@
             // m_textBox_genre
             // 
             this.m_textBox_genre.Location = new System.Drawing.Point(117, 138);
-            this.m_textBox_genre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.m_textBox_genre.Margin = new System.Windows.Forms.Padding(2);
             this.m_textBox_genre.Name = "m_textBox_genre";
             this.m_textBox_genre.Size = new System.Drawing.Size(243, 20);
             this.m_textBox_genre.TabIndex = 17;
@@ -225,7 +225,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(117, 184);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(243, 20);
             this.textBox2.TabIndex = 19;
@@ -258,7 +258,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(400, 400);
             this.Name = "Form4_addMovie";
-            this.Text = "Add Movie";
+            this.Text = "ADD MOVIE";
             this.ResumeLayout(false);
             this.PerformLayout();
 
