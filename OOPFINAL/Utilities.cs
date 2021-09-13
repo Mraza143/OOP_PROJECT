@@ -29,7 +29,7 @@ namespace MOVIEFLIX_OOP
             }
                 return sb.ToString();
         }
-//############################################################################################################################################
+
         public static Image ByteToImage(byte[] imageBytes)
         {
             MemoryStream ms = new MemoryStream(imageBytes, 0, imageBytes.Length);
@@ -37,7 +37,7 @@ namespace MOVIEFLIX_OOP
             Image image = new Bitmap(ms);
             return image;
         }
-//############################################################################################################################################
+
         public static byte[] ImageToBytes(Image image, System.Drawing.Imaging.ImageFormat format)
         {
             using (MemoryStream ms = new MemoryStream())
@@ -48,6 +48,6 @@ namespace MOVIEFLIX_OOP
             }
 
         }
-//############################################################################################################################################
+
     }
 }
