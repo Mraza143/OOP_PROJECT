@@ -43,7 +43,7 @@ namespace MOVIEFLIX_OOP
             this.label1.Font = new System.Drawing.Font("Franklin Gothic Demi", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(818, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 39);
+            this.label1.Size = new System.Drawing.Size(163, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "WatchList";
             // 
@@ -76,7 +76,7 @@ namespace MOVIEFLIX_OOP
             this.label2.Font = new System.Drawing.Font("MS PGothic", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(497, 159);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(769, 34);
+            this.label2.Size = new System.Drawing.Size(757, 33);
             this.label2.TabIndex = 3;
             this.label2.Text = "A nice place to put your friend\'s recommendations in.";
             // 
