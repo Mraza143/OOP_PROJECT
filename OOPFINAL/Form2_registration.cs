@@ -13,9 +13,7 @@ namespace MOVIEFLIX_OOP
 {
     public partial class Form2_registration : Form
     {
-        // summary
-        // Initialize required database connections for insert here(since registration)
-        // /summary
+        
 
         SQLiteConnection m_dbConnection;
         SQLiteCommand sql_query;
@@ -38,12 +36,9 @@ namespace MOVIEFLIX_OOP
             else
             {
                 password_md5 = Utilities.md5_generator(password);
-
                 m_dbConnection = new SQLiteConnection("Data Source=movieflix.sqlite;Version=3;");
                 m_dbConnection.Open();
-
                 sql_query = new SQLiteCommand(@"insert into users(email,password) values ('" + email + "','" + password_md5 + "')", m_dbConnection);
-
                 if (sql_query.ExecuteNonQuery() != 0)
                 {
                     MessageBox.Show("Account created successfully");
@@ -54,8 +49,6 @@ namespace MOVIEFLIX_OOP
                     MessageBox.Show("Unable to create accountt");
                 }
             }
-            
- 
         }
 
         private void Form2_registration_Load(object sender, EventArgs e)
