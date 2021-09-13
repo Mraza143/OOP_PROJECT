@@ -14,28 +14,22 @@ namespace MOVIEFLIX_OOP
 {
     public partial class Form3_MovieList : Form
     {
-//###########################################################################################################################################################################
-        //GLOVARS
-        //
         SQLiteConnection m_dbConnection = new SQLiteConnection("Data Source=movieflix.sqlite;Version=3;");
         SQLiteCommand sql_query;
         SQLiteDataReader reader;
-        int i; //need this for identifying clicked poster..
-        int movieID; //needed for editing clicked poster/movie...ugh. .
+        int i;
+        int movieID;
         string welcome;
         string username;
         string searchstring,genreString1,genreString2;
         bool searchByGenre;
         string[] genres;
         
-        //
-        // /GLOVARS
-//###########################################################################################################################################################################
         public Form3_MovieList()
         {
             InitializeComponent();
         }
-//###########################################################################################################################################################################
+//
         public Form3_MovieList(string x, string genreString1,string genreString2, bool searchByGenre)
         {
             username = x;
@@ -45,7 +39,6 @@ namespace MOVIEFLIX_OOP
             InitializeComponent();
             welcome = "Welcome, " + x;
         }
-//#####################################################################################################################################################################
         public Form3_MovieList(string x,string searchstring,bool searchByGenre)
         {
             username = x;
@@ -54,12 +47,11 @@ namespace MOVIEFLIX_OOP
             InitializeComponent();
             welcome = "Welcome, " + x;
         }
-//###########################################################################################################################################################################
+
         private void Form3_MovieList_Load(object sender, EventArgs e)
         {
             m_label_username.Text = welcome;
-            this.AutoScroll = true;
-            
+            this.AutoScroll = true;          
             genres = new string[] {"Action/Adventure","Biopic/Historical","Comedy","Drama","Documentary","Fantasy","Horror","Romance","Sci-Fi","Superhero","Thriller/Mystery"};
             for (int i = 0; i < genres.Length; i++)
             {
@@ -67,63 +59,45 @@ namespace MOVIEFLIX_OOP
                 m_comboBox_genre2.Items.Add(genres[i]);
             }
 
-            m_dbConnection.Open();                                                          //open connection
+            m_dbConnection.Open();                                                          
 
-            //############################################### SEARCHING BY GENRE ##########################################################
+            
             if (searchByGenre)
             {
-                //#################CREATE TEMP TABLE#########################
+                //CREATE TEMP TABLE
                 sql_query = new SQLiteCommand("drop table if exists tmp", m_dbConnection);
                 sql_query.ExecuteNonQuery();
                 sql_query = new SQLiteCommand("create table tmp as select rowid,* from movies where (genre_main like '%"+genreString1+"%' and genre_secondary like '%"+genreString2+"%') or (genre_main like '%"+genreString2+"%' and genre_secondary like '%"+genreString1+"%') ", m_dbConnection);
                 sql_query.ExecuteNonQuery();
-                //#################/ CREATE TEMP TABLE#########################
-
-
-            } //end if
-            //############################################### END SEARCHING BY GENR ######################################################
-
-            //############################################### SEARCHING BY SEARCHSTRING ##################################################
+            } 
+            
             else
             {
 
-                //#################CREATE TEMP TABLE#########################
                 sql_query = new SQLiteCommand("drop table if exists tmp", m_dbConnection);
                 sql_query.ExecuteNonQuery();
                 sql_query = new SQLiteCommand("create table tmp as select rowid,* from movies where (name like '%" + searchstring + "%' or director like '%" + searchstring + "%' or actor_main like '%" + searchstring + "%' or actor_secondary like '%" + searchstring + "%')", m_dbConnection);
                 sql_query.ExecuteNonQuery();
-                //#################/ CREATE TEMP TABLE#########################
+            }
 
-            }//end else
-
-            //############################################### END SEARCHING BY SEARCHSTRING ##############################################
-
-                //sql_query = new SQLiteCommand("select count(*) from movies where (name like '%" + searchstring + "%' or director like '%" + searchstring + "%' or actor_main like '%" + searchstring + "%' or actor_secondary like '%" + searchstring + "%')", m_dbConnection);   //need this for number of pictureboxes to be generated via loop
                 sql_query = new SQLiteCommand("select count(*) from tmp", m_dbConnection);
                 int m_numberOfPictures = 0;
                 reader = sql_query.ExecuteReader();
                 while (reader.Read())
                 {
-                    m_numberOfPictures = Convert.ToInt32(reader["count(*)"]);                   //get number of pictures to be rendered, assign to a variable
+                    m_numberOfPictures = Convert.ToInt32(reader["count(*)"]);
 
                 }
-
                 reader.Dispose();
                 
-                PictureBox[] picturebox = new PictureBox[m_numberOfPictures];
-                
-            
-                int x = 0; int y = 260;            // the coordinates
-
+                PictureBox[] picturebox = new PictureBox[m_numberOfPictures];            
+                int x = 0; int y = 260;
                 for (i = 0; i < m_numberOfPictures; i++)
                 {
                     x++;
                 picturebox[i] = new PictureBox();
                 this.Controls.Add(picturebox[i]);
-
-                    if (i % 5 == 0) { x = 0; y = y + 260; }
-
-                    
+                    if (i % 5 == 0) { x = 0; y = y + 260; }                   
                     picturebox[i].Location = new Point(x * 200 + 100, y);                   
                     picturebox[i].Size = new Size(200, 260);
                     picturebox[i].SizeMode = PictureBoxSizeMode.Zoom;
