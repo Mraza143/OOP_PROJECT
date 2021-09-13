@@ -185,16 +185,12 @@ namespace MOVIEFLIX_OOP
 
         private void m_textBox_password_Click(object sender, EventArgs e)
         {
-          
                 m_textBox_password.Text = "";
-           
         }
 
         private void m_textBox_email_Click(object sender, EventArgs e)
-        {
-          
+        {         
                 m_textBox_email.Text = "";
-           
         }
     }
 }

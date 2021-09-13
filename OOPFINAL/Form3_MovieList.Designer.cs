@@ -193,7 +193,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(1224, 728);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(112, 28);
             this.button1.TabIndex = 14;
@@ -204,7 +204,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(1341, 728);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(112, 28);
             this.button2.TabIndex = 15;
@@ -215,7 +215,7 @@
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(1342, 760);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(113, 27);
             this.button3.TabIndex = 16;
@@ -258,7 +258,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1028, 598);
             this.Name = "Form3_MovieList";
-            this.Text = "Movies List";
+            this.Text = "MOVIES LIST";
             this.Load += new System.EventHandler(this.Form3_MovieList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.m_picturebox_poster)).EndInit();
             this.groupBox1.ResumeLayout(false);

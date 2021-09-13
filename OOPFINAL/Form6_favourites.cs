@@ -53,7 +53,7 @@ namespace MOVIEFLIX_OOP
                 picturebox[i] = new PictureBox();
                 this.Controls.Add(picturebox[i]);
 
-                if (i % 8 == 0) { x = 0; y = y + 230; }
+                if (i % 7 == 0) { x = 0; y = y + 230; }
 
                 //picturebox[i].BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
                 picturebox[i].Location = new Point(x * 180 + 10, y);
